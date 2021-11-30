@@ -44,6 +44,8 @@
 %Uncomment next line if AMS fonts required
 \usepackage{iopams}  
 \usepackage{graphicx}
+%\usepackage{subcaption}
+
 %\usepackage{amsmath,amssymb}
 \begin{document}
 
@@ -126,10 +128,16 @@ ternary system--to demonstrate the separation of connected data into
 a physically 'meaningful' component and a component that comprises
 noise and artifacts. At the most basic level, we see that the signal
 is readily separated into two components: $X = \hat{X} + \eta$, where
-$\hat{X}$ is a slow-varying signal and $\eta$ is a fast-varying noise
-contribution. The approach depends only on the minimal assumption of
+$\hat{X}$ is slow-varying in the ordinal dimensions and $\eta$ is a fast-varying noise
+contribution (again, in the ordinal dimensions). The approach depends only on the minimal assumption of
 connectedness and so should be applicable, with minor tuning, to any
 dataset.
+
+In the particular case of an XRD dataset the signal is concentrated in peaks that are narrow in $q$-space, which we show allows a robust separation of any background with slow $q$-variation (e.g. diffuse scattering). 
+
+Finally, the most compelling exploitation of connected data emerges in its \emph{interpretation}--especially in the propagation of noise estimates into uncertainties in any downstream model-derived quantities, and in the use of connectivity to remove domain-specific measurement artifacts. In section xxxx we show a feature extraction scheme for XRD phase mapping datasets that is based on local connectivity. The approach is robust to peak-shifting, which until now has been long-standing frustration for the interpretation of such datasets. 
+\emph{say why this is new and good, motivate and compare to prior efforts in the community}
+
 
 %use  connectedness of measurements to separate a collection of spectral or diffraction
 %
@@ -158,16 +166,9 @@ dataset.
 \section{Methods}
 \begin{figure}
   \includegraphics[width=\linewidth]{figures/heatmaps.png}
-  \caption{
- (a) Heatmap of XRD dataset $X_{iq}$ corresponding to a temperature scan
+  \caption{ (a) Heatmap of XRD dataset $X_{iq}$ corresponding to a temperature scan
 of XRD patterns for xxxxx system. The vertical index $i$ and horizontal
-index $q$ index temperature and momentum transfer, respectively.
-
-(b) ...
-
-(c)
-
-(d)}
+index $q$ index temperature and momentum transfer, respectively. }
   \label{fig:heatmaps}
 \end{figure}
 %Separation: either fast/slow or frequency-based variation. Frequency of variation is the key idea. 
@@ -193,10 +194,10 @@ N(0, \sigma) \circledast |{F}^{-1}(H  {F}(q))|,
 
 where $N$ is a unit Gaussian in q with standard deviation $\sigma$
 is chosen to match the diffraction peak width, $\circledast$ denotes
-convolution, and $H$ is a high-pass Gaussian window. The background can
-then be simply estimated by an interpolation using data from non-peak
-regions to fill in background intensities within the peak regions (Fig.
-1(c)) and finally subtracted from the denoised data (Fig. 1(d)).
+convolution, and $H$ is a high-pass Gaussian window. The background is
+then estimated by an interpolation using data from non-peak regions to
+fill in background intensities within the peak regions (Fig. 1(c)).
+Finally, it is subtracted from the denoised data (Fig. 1(d)).
 
 To make for a simple extension to datasets of arbitrary dimensions we
 estimate the background by linear interpolation in the q dimension
@@ -253,6 +254,33 @@ of XRD patterns for xxxxxx system. Index $i$ denotes temperature.
     
 (b) Intensity profile along each of the features in (a).}
   \label{fig:features}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+%  \begin{subfigure}[b]{0.4\linewidth}
+%    \includegraphics[width=\linewidth]{figures/3d_features.png}
+%    \caption{(a)}
+%  \end{subfigure}
+%  \begin{subfigure}[b]{0.4\linewidth}
+    \includegraphics[width=\linewidth]{figures/3d_raw.png}
+%    \caption{(b)}
+%  \end{subfigure}
+  \caption{caption}
+  \label{fig:coffee}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+%  \begin{subfigure}[b]{0.4\linewidth}
+    \includegraphics[width=\linewidth]{figures/3d_features.png}
+%    \caption{(a)}
+%  \end{subfigure}
+%  \begin{subfigure}[b]{0.4\linewidth}
+%    \caption{(b)}
+%  \end{subfigure}
+  \caption{caption}
+  \label{fig:coffee}
 \end{figure}
 
 %* Discuss caveats: some features are broken up, others are merged. Since there's typically plenty of reduncancy due to the multiple lines that appear with each phase, we think that the feature extraction is robust to these errors.
