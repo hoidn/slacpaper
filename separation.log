@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.11.29)  30 NOV 2021 15:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.11.29)  4 DEC 2021 12:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -75,7 +75,11 @@ File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count188
 \l__pdf_internal_box=\box47
 )
-(./separation.aux)
+(./separation.aux
+
+LaTeX Warning: Label `fig:coffee' multiply defined.
+
+)
 \openout1 = `separation.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 50.
@@ -92,8 +96,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 50.
 LaTeX Font Info:    ... okay on input line 50.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 50.
 LaTeX Font Info:    ... okay on input line 50.
-
-(/usr/local/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+ (/usr/local/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count189
 \scratchdimen=\dimen143
@@ -132,23 +135,23 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 <figures/heatmaps.png, id=15, 1653.17625pt x 1280.785pt>
 File: figures/heatmaps.png Graphic file (type png)
 <use figures/heatmaps.png>
-Package pdftex.def Info: figures/heatmaps.png  used on input line 168.
+Package pdftex.def Info: figures/heatmaps.png  used on input line 175.
 (pdftex.def)             Requested size: 446.39996pt x 345.83612pt.
 <figures/noise.png, id=17, 906.38625pt x 260.975pt>
 File: figures/noise.png Graphic file (type png)
 <use figures/noise.png>
-Package pdftex.def Info: figures/noise.png  used on input line 209.
+Package pdftex.def Info: figures/noise.png  used on input line 220.
 (pdftex.def)             Requested size: 446.39996pt x 128.53194pt.
  [2] [3 <./figures/heatmaps.png> <./figures/noise.png>]
 <figures/features.png, id=32, 1692.3225pt x 670.505pt>
 File: figures/features.png Graphic file (type png)
 <use figures/features.png>
-Package pdftex.def Info: figures/features.png  used on input line 250.
+Package pdftex.def Info: figures/features.png  used on input line 261.
 (pdftex.def)             Requested size: 446.39996pt x 176.86449pt.
 <figures/3d_raw.png, id=33, 1955.305pt x 1027.84pt>
 File: figures/3d_raw.png Graphic file (type png)
 <use figures/3d_raw.png>
-Package pdftex.def Info: figures/3d_raw.png  used on input line 266.
+Package pdftex.def Info: figures/3d_raw.png  used on input line 277.
 (pdftex.def)             Requested size: 446.39996pt x 234.65735pt.
 
 
@@ -157,7 +160,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <figures/3d_features.png, id=34, 1955.305pt x 1027.84pt>
 File: figures/3d_features.png Graphic file (type png)
 <use figures/3d_features.png>
-Package pdftex.def Info: figures/3d_features.png  used on input line 276.
+Package pdftex.def Info: figures/3d_features.png  used on input line 287.
 (pdftex.def)             Requested size: 446.39996pt x 234.65735pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -167,13 +170,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [6 <./figures/3d_features.png>] (./separation.aux)
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
  2122 strings out of 478994
  26596 string characters out of 5858183
- 320310 words of memory out of 5000000
+ 319349 words of memory out of 5000000
  19606 multiletter control sequences out of 15000+600000
  411342 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -193,7 +196,7 @@ e/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive
 /2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2
 021/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/20
 21/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on separation.pdf (6 pages, 2591839 bytes).
+Output written on separation.pdf (6 pages, 2592430 bytes).
 PDF statistics:
  94 PDF objects out of 1000 (max. 8388607)
  60 compressed objects within 1 object stream
