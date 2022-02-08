@@ -171,6 +171,16 @@ frustration for the interpretation of such datasets.
 %* Discuss, cite prior literature
 
 \section{Methods}
+
+\subsection{Prior approaches}
+Summarize approaches using simple similarity measures, such as cosine distance in the diffraction space.
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{paper_figures/1/raw_with_similarity.png}
+  \caption{}
+  \label{fig:noise}
+\end{figure}
+
 \begin{figure}
   \includegraphics[width=\linewidth]{figures/heatmaps.png}
   \caption{ (a) Heatmap of XRD dataset $X_{iq}$ corresponding to a temperature scan
@@ -238,8 +248,7 @@ The above estimations of background and noise components separate
 the signal into estimates of the physical components (separated into
 background + diffuse scattering and diffraction) and uncertainty values
 that correspond to single samples of an underlying noise distributions.
-Despite its incompleteness, the latter can be used as an input for
-sensitivity analysis on downstream models.
+The latter can be used to propagate uncertainties to any downstream analyses. 
 
 \section{Discussion}
 \subsection{Application: feature extraction}
@@ -258,13 +267,23 @@ at a nearby $q$ value. We next define each set of linked peaks as a
 etc….
 
 \begin{figure}
-  \includegraphics[width=\linewidth]{figures/features.png}
+  \includegraphics[width=\linewidth]{paper_figures/4/Tfeatures.png}
   \caption{(a) Color-coded features identified from peaks connected in
 $i,q$ space for XRD dataset $X_{iq}$ corresponding to a temperature scan
 of XRD patterns for xxxxxx system. Index $i$ denotes temperature.
     
 (b) Intensity profile along each of the features in (a).}
   \label{fig:features}
+\end{figure}
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{paper_figures/5/T_peakfit.png}
+%  \caption{(a) Color-coded features identified from peaks connected in
+%$i,q$ space for XRD dataset $X_{iq}$ corresponding to a temperature scan
+%of XRD patterns for xxxxxx system. Index $i$ denotes temperature.
+%    
+%(b) Intensity profile along each of the features in (a).}
+  \label{fig:simsquares}
 \end{figure}
 
 \begin{figure}[h!]
