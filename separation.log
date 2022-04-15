@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.11.29)  8 FEB 2022 15:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.11.29)  15 APR 2022 13:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -121,13 +121,13 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Trying to load font information for U+msa on input line 103
+LaTeX Font Info:    Trying to load font information for U+msa on input line 101
 .
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 103
+LaTeX Font Info:    Trying to load font information for U+msb on input line 101
 .
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -135,40 +135,40 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-<paper_figures/1/raw_with_similarity.png, id=15, 1067.99pt x 542.025pt>
+<paper_figures/1/raw_with_similarity.png, id=14, 1067.99pt x 542.025pt>
 File: paper_figures/1/raw_with_similarity.png Graphic file (type png)
 <use paper_figures/1/raw_with_similarity.png>
 Package pdftex.def Info: paper_figures/1/raw_with_similarity.png  used on input
- line 179.
+ line 177.
 (pdftex.def)             Requested size: 446.39996pt x 226.55722pt.
-<figures/heatmaps.png, id=17, 1653.17625pt x 1280.785pt>
+<figures/heatmaps.png, id=16, 1653.17625pt x 1280.785pt>
 File: figures/heatmaps.png Graphic file (type png)
 <use figures/heatmaps.png>
-Package pdftex.def Info: figures/heatmaps.png  used on input line 185.
+Package pdftex.def Info: figures/heatmaps.png  used on input line 183.
 (pdftex.def)             Requested size: 446.39996pt x 345.83612pt.
  [2 <./paper_figures/1/raw_with_similarity.png>] [3 <./figures/heatmaps.png>]
 <figures/noise.png, id=32, 906.38625pt x 260.975pt>
 File: figures/noise.png Graphic file (type png)
 <use figures/noise.png>
-Package pdftex.def Info: figures/noise.png  used on input line 230.
+Package pdftex.def Info: figures/noise.png  used on input line 228.
 (pdftex.def)             Requested size: 446.39996pt x 128.53194pt.
  [4 <./figures/noise.png>]
 <paper_figures/4/Tfeatures.png, id=37, 886.31125pt x 298.11375pt>
 File: paper_figures/4/Tfeatures.png Graphic file (type png)
 <use paper_figures/4/Tfeatures.png>
-Package pdftex.def Info: paper_figures/4/Tfeatures.png  used on input line 270.
+Package pdftex.def Info: paper_figures/4/Tfeatures.png  used on input line 268.
 
 (pdftex.def)             Requested size: 446.39996pt x 150.15277pt.
-<paper_figures/5/T_peakfit.png, id=38, 1071.00125pt x 513.92pt>
+<paper_figures/5/T_peakfit.png, id=38, 1178.4025pt x 601.24625pt>
 File: paper_figures/5/T_peakfit.png Graphic file (type png)
 <use paper_figures/5/T_peakfit.png>
-Package pdftex.def Info: paper_figures/5/T_peakfit.png  used on input line 280.
+Package pdftex.def Info: paper_figures/5/T_peakfit.png  used on input line 278.
 
-(pdftex.def)             Requested size: 446.39996pt x 214.206pt.
+(pdftex.def)             Requested size: 446.39996pt x 227.76035pt.
 <figures/3d_raw.png, id=39, 1955.305pt x 1027.84pt>
 File: figures/3d_raw.png Graphic file (type png)
 <use figures/3d_raw.png>
-Package pdftex.def Info: figures/3d_raw.png  used on input line 296.
+Package pdftex.def Info: figures/3d_raw.png  used on input line 294.
 (pdftex.def)             Requested size: 446.39996pt x 234.65735pt.
 
 
@@ -177,7 +177,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <figures/3d_features.png, id=40, 1955.305pt x 1027.84pt>
 File: figures/3d_features.png Graphic file (type png)
 <use figures/3d_features.png>
-Package pdftex.def Info: figures/3d_features.png  used on input line 306.
+Package pdftex.def Info: figures/3d_features.png  used on input line 304.
 (pdftex.def)             Requested size: 446.39996pt x 234.65735pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -191,11 +191,11 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  2138 strings out of 478994
  27120 string characters out of 5858183
- 318349 words of memory out of 5000000
+ 318359 words of memory out of 5000000
  19617 multiletter control sequences out of 15000+600000
  411342 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,5n,74p,652b,381s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 68i,5n,74p,959b,381s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
@@ -211,7 +211,7 @@ e/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive
 /2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2
 021/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/20
 21/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on separation.pdf (6 pages, 2727763 bytes).
+Output written on separation.pdf (6 pages, 2731251 bytes).
 PDF statistics:
  98 PDF objects out of 1000 (max. 8388607)
  60 compressed objects within 1 object stream

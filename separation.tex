@@ -94,11 +94,9 @@
 
 
 \section{Introduction}
-Experiments undertaken at synchrotron and XFEL light sources can generate large volumes of data that are rich in information but plagued by noise and artifacts. There is often much continuity between successive measurements: when collecting a progression of diffraction patterns or spectra over a continuous range of physical states, the standard practice is to capture many intermediate states of the corresponding evolution of the signal. Furthermore many methods--such as powder diffraction and serial crystallography--require repeated measurements of the same system to accumulate sufficient statistics or orientational averaging. 
-
-%Define ordered and connected
-
-For these two reasons large spectroscopic or diffraction datasets generated in typical experiments at third- or fourth-generation light sources are likely to contain sequences of measurements with smooth variation with respect to the underlying physical information. Equivalently, we say that such a dataset can be assembled into a high-dimensional array where the underlying signal is both \emph{smooth} and \emph{connected}. More explicitly, any such dataset can be represented as the tensor
+Experiments undertaken at synchrotron and XFEL light sources can generate large volumes of data that are rich in information but plagued by noise and artifacts. There is often an intrinsic connectedness between successive measurements taken on a progression of different physical states: for example, a series of thermodynamic states in a phase diagram. There may also be further data redundancy, as many methods--such as powder diffraction and serial crystallography--require repeated measurements of the same system to accumulate sufficient statistics or orientational averaging. Consequently, large spectroscopic or diffraction datasets generated at third- or fourth-generation light sources are likely to contain sequences of measurements that combine smooth variation with respect to underlying physical parameters with stochastic variation due to counting statistics, detector characteristics, sample nonuniformity and other artefacts. 
+ %Define ordered and connected
+With respect to variation in underlying physical parameters, such a spectroscopic or diffraction dataset can be assembled into a tensor of the form 
 
 \begin{equation}
 X_{i_1i_2...i_Nq}
@@ -117,7 +115,7 @@ attributes.
 This connectedness describes both the signal and any smoothly-varying
 background, while other contributions to the measured X-ray
 intensity--such as shot noise, one-off artifacts, and stochastic
-variations across different portions of the sample--are uncorrelated or
+variations across different portions of the sample--are independent or
 at least substantially stochastic. (note: high-frequency variation is a
 more accurate description here, uncorrelated is a limiting case but it
 simplifies the interpretation).
