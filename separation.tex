@@ -96,36 +96,38 @@
 \section{Introduction}
 Experiments undertaken at synchrotron and XFEL light sources can generate large volumes of data that are rich in information but plagued by noise and artifacts. There is often an intrinsic connectedness between successive measurements taken on a progression of different physical states: for example, a series of thermodynamic states in a phase diagram. There may also be further data redundancy, as many methods--such as powder diffraction and serial crystallography--require repeated measurements of the same system to accumulate sufficient statistics or orientational averaging. Consequently, large spectroscopic or diffraction datasets generated at third- or fourth-generation light sources are likely to contain sequences of measurements that combine smooth variation with respect to underlying physical parameters with stochastic variation due to counting statistics, detector characteristics, sample nonuniformity and other artefacts. 
  %Define ordered and connected
-With respect to variation in underlying physical parameters, such a spectroscopic or diffraction dataset can be assembled into a tensor of the form 
+These underlying physical parameters can be treated as ordinal variables to assemble a spectroscopic or (1D) diffraction dataset into a tensor of the form 
 
 \begin{equation}
-X_{i_1i_2...i_Nq}
+X_{i_1i_2...i_N, iq}
 \end{equation}
 
-for which each distinct sequence of values for the indices $i_1, i_2,...
-i_N$ corresponds to a single spectrum or diffraction pattern, $q$
-indexes momentum transfer or energy in the case of XRD or spectroscopy,
-respectively, and each of the indices $i_n, n \in \{1, 2, ... N\}$
-corresponds to an ordering dimension along which direction the
-underlying signal's variation is smooth. The dimensionality of the
-dataset is thus simply one higher than $N$, the number of ordinal
-attributes.
+where the first $i1$ to $i_N$ index the ordinal variables and $iq$ indexes energy or momentum transfer in the case of XRD or spectroscopy,
+respectively. 
+%for which each distinct sequence of values for the indices $i_1, i_2,...
+%i_N$ corresponds to a single spectrum or diffraction pattern, $q$
+%indexes momentum transfer or energy in the case of XRD or spectroscopy,
+%respectively, and each of the indices $i_n, n \in \{1, 2, ... N\}$
+%corresponds to an ordering dimension along which direction the
+%underlying signal's variation is smooth. The dimensionality of the
+%dataset is thus simply one higher than $N$, the number of ordinal
+%attributes.
+%
 
-
-This connectedness describes both the signal and any smoothly-varying
+The connectedness of $X$ with respect to indices $i_1, i_2, ... i_N$ describes both the sample-derived signal and any smoothly-varying
 background, while other contributions to the measured X-ray
 intensity--such as shot noise, one-off artifacts, and stochastic
 variations across different portions of the sample--are independent or
-at least substantially stochastic. (note: high-frequency variation is a
-more accurate description here, uncorrelated is a limiting case but it
-simplifies the interpretation).
+at least substantially stochastic. 
+%(note: high-frequency variation is a
+%more accurate description here, uncorrelated is a limiting case but it
+%simplifies the interpretation).
 
 In this paper, we take two examples of XRD datasets--one temperature
 study of xxxx material and one combinatorial study of the CoNiTi
 ternary system--to demonstrate the separation of connected data into
-a physically 'meaningful' component and a component that comprises
-noise and artifacts. At the most basic level, we see that the signal
-is readily separated into two components: $X = \hat{X} + \eta$, where
+a physically relevant component and a component that comprises
+noise and artifacts. We represent this as sepration of the signal into two components: $X = \hat{X} + \eta$, where
 $\hat{X}$ is slow-varying in the ordinal dimensions and $\eta$ is a fast-varying noise
 contribution (again, in the ordinal dimensions). The approach depends only on the minimal assumption of
 connectedness and so should be applicable, with minor tuning, to any
@@ -180,7 +182,8 @@ Summarize approaches using simple similarity measures, such as cosine distance i
 \end{figure}
 
 \begin{figure}
-  \includegraphics[width=\linewidth]{figures/heatmaps.png}
+  %\includegraphics[width=\linewidth]{figures/heatmaps.png}
+  \includegraphics[scale=.5]{paper_figures/pkg/2_T_summary.png}
   \caption{ (a) Heatmap of XRD dataset $X_{iq}$ corresponding to a temperature scan
 of XRD patterns for xxxxx system. The vertical index $i$ and horizontal
 index $q$ index temperature and momentum transfer, respectively. }
@@ -200,9 +203,10 @@ Fourier transform. This is because of the presence of ringing artifacts
 as well as the high concentration of signal in the diffraction peaks,
 which pile on top of the background in the low-frequency region of the
 power spectral density. On the other hand we can identify peak regions
-by applying a threshold on the transformed signal illustrated in Fig.
-1(b), which we calculate as
+by padding the signal in the $q$ dimension, taking a 1D DFT, and
+suppressing low-frequency components with a simple filter:
 
+% TODO effect of zero-padding / extrapolation
 \begin{equation}
 N(0, \sigma) \circledast |{F}^{-1}(H  {F}(q))|,
 \end{equation}
@@ -213,8 +217,7 @@ convolution, and $H$ is a Blackman window
 
 \emph{this part will be fleshed out. some steps are still omitted}
 
-The background is
-then estimated by an interpolation using data from non-peak regions to
+The background is then estimated by an interpolation using data from non-peak regions to
 fill in background intensities within the peak regions (Fig. 1(c)).
 Finally, it is subtracted from the denoised data (Fig. 1(d)).
 
@@ -245,8 +248,10 @@ separate them (Fig. 2)
 The above estimations of background and noise components separate
 the signal into estimates of the physical components (separated into
 background + diffuse scattering and diffraction) and uncertainty values
-that correspond to single samples of an underlying noise distributions.
-The latter can be used to propagate uncertainties to any downstream analyses. 
+that are interpreted as single samples of an unknown underlying noise distributions.
+The latter can be used to propagate uncertainties to any downstream analyses.
+
+\emph{some discussion is needed on the difference in interpretation of the noise estimate in undersampled vs. sufficiently sampled datasets}
 
 \section{Discussion}
 \subsection{Application: feature extraction}
@@ -254,19 +259,33 @@ The above analysis addresses the data itself, with no scientific
 interpretation aside from the separation between crystalline and diffuse
 contributions to the scattering signal. However, we find that the same
 ordering and smoothness properties are useful for reducing the data into
-salient *information*, where the goal is to find physically-meaningful
+salient \emph{information}, where the goal is to find physically-meaningful
 boundaries in the ordering dimensions corresponding to, e.g., the
 surface separating a single-phase region from surrounding multi-phase
-regions in a combinatorial diffraction dataset. Specifically, we can
+regions in a combinatorial diffraction dataset. Specifically, we 
 identify diffraction peaks in every XRD pattern, independently, and then
-link each peak in a pattern to any peaks in adjacent patterns centered
-at a nearby $q$ value. We next define each set of linked peaks as a
-*feature* . ….. utility of this is that it removes peak-shifting,
-etc….
+link each peak in a pattern to any q-neighboring peaks in neighboring patterns (i.e. patterns that are adjacent in $i_1, i_2 ... i_N$). 
+
+Each set of peaks linked in this way is defined as a feature, and the ensemble of features defines a new representation of the dataset $ Y_{i_1,i_2...i_N, j} $, where $j$ indexes the peak featres. The entries of $Y$ are 0 where the corresponding pattern lacks feature $j$, and equal to the peak's intensity otherwise.
+
+\emph{here, explain two ways of getting peak locations and intensity: the simple ridge-finding and BBA-based peak-fitting.}
+
+\emph{cover the utility of noise estimates and background subtraction for better peak fitting}
 
 \begin{figure}
-  \includegraphics[width=\linewidth]{paper_figures/4/Tfeatures.png}
-  \caption{(a) Color-coded features identified from peaks connected in
+  \includegraphics[width=\linewidth]{paper_figures/pkg/3_BBA.png}
+  \caption{Example of the effect of background subtraction and noise
+ estimation on peak fitting for one BBA block. This figure needs to be
+ reformatted (font size, layout)}
+  \label{fig:features}
+\end{figure}
+
+%utility of this is that it removes peak-shifting,
+%etc….
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{paper_figures/pkg/4_Tfeatures.png}
+  \caption{(a) Features identified from peaks connected in
 $i,q$ space for XRD dataset $X_{iq}$ corresponding to a temperature scan
 of XRD patterns for xxxxxx system. Index $i$ denotes temperature.
     
@@ -275,12 +294,8 @@ of XRD patterns for xxxxxx system. Index $i$ denotes temperature.
 \end{figure}
 
 \begin{figure}
-  \includegraphics[width=\linewidth]{paper_figures/5/T_peakfit.png}
-%  \caption{(a) Color-coded features identified from peaks connected in
-%$i,q$ space for XRD dataset $X_{iq}$ corresponding to a temperature scan
-%of XRD patterns for xxxxxx system. Index $i$ denotes temperature.
-%    
-%(b) Intensity profile along each of the features in (a).}
+  \includegraphics[width=\linewidth]{paper_figures/pkg/5_T_peakfit.png}
+\caption{}
   \label{fig:simsquares}
 \end{figure}
 
@@ -291,24 +306,24 @@ of XRD patterns for xxxxxx system. Index $i$ denotes temperature.
 %    \caption{(a)}
 %  \end{subfigure}
 %  \begin{subfigure}[b]{0.4\linewidth}
-    \includegraphics[width=\linewidth]{figures/3d_raw.png}
+    \includegraphics[width=\linewidth]{paper_figures/pkg/6.png}
 %    \caption{(b)}
 %  \end{subfigure}
   \caption{caption}
-  \label{fig:coffee}
+  \label{fig:6}
 \end{figure}
 
 \begin{figure}[h!]
   \centering
 %  \begin{subfigure}[b]{0.4\linewidth}
-    \includegraphics[width=\linewidth]{figures/3d_features.png}
+    \includegraphics[scale = .55]{paper_figures/pkg/7_composition_summary_peakfit.png}
 %    \caption{(a)}
 %  \end{subfigure}
 %  \begin{subfigure}[b]{0.4\linewidth}
 %    \caption{(b)}
 %  \end{subfigure}
   \caption{caption}
-  \label{fig:coffee}
+  \label{fig:7}
 \end{figure}
 
 %* Discuss caveats: some features are broken up, others are merged. Since there's typically plenty of reduncancy due to the multiple lines that appear with each phase, we think that the feature extraction is robust to these errors.
