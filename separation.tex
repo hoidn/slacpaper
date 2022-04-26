@@ -118,7 +118,9 @@ The connectedness of $X$ with respect to indices $i_1, i_2, ... i_N$ describes b
 background, while other contributions to the measured X-ray
 intensity--such as shot noise, one-off artifacts, and stochastic
 variations across different portions of the sample--are independent or
-at least substantially stochastic. 
+at least substantially stochastic. We label the signal and stochastic components of $X$ as $S$ and $\eta$, respectively: $X = S + \eta$.
+
+\emph{perhaps notation shouldn't already be introduced in the intro section}
 %(note: high-frequency variation is a
 %more accurate description here, uncorrelated is a limiting case but it
 %simplifies the interpretation).
@@ -246,14 +248,18 @@ along ordering dimensions; thus we can use a simple DFT filter to
 separate them (Fig. 2)
 
 The above estimations of background and noise components separate
-the signal into estimates of the physical components (separated into
+the signal into estimates of the signal component $S$ (which in turn separates into
 background + diffuse scattering and diffraction) and uncertainty values
-that are interpreted as single samples of an unknown underlying noise distributions.
-The latter can be used to propagate uncertainties to any downstream analyses.
+that are interpreted as single samples of an unknown underlying noise distributions. Despite its poorly-characterized nature, the latter of these can be used to propagate uncertainties to any downstream analyses. 
+
+We label the signal and background $\hat{S}$ and $B$, respectively,
+so that $X = \hat{S} + B + \eta$.
+
+
 
 \emph{some discussion is needed on the difference in interpretation of the noise estimate in undersampled vs. sufficiently sampled datasets}
 
-\section{Discussion}
+\section{Methods and Discussion}
 \subsection{Application: feature extraction}
 The above analysis addresses the data itself, with no scientific
 interpretation aside from the separation between crystalline and diffuse
@@ -264,11 +270,22 @@ boundaries in the ordering dimensions corresponding to, e.g., the
 surface separating a single-phase region from surrounding multi-phase
 regions in a combinatorial diffraction dataset. Specifically, we 
 identify diffraction peaks in every XRD pattern, independently, and then
-link each peak in a pattern to any q-neighboring peaks in neighboring patterns (i.e. patterns that are adjacent in $i_1, i_2 ... i_N$). 
+link each peak in a pattern to any q-adjacent peaks in neighboring patterns (i.e. patterns that are adjacent in $i_1, i_2 ... i_N$). 
 
-Each set of peaks linked in this way is defined as a feature, and the ensemble of features defines a new representation of the dataset $ Y_{i_1,i_2...i_N, j} $, where $j$ indexes the peak featres. The entries of $Y$ are 0 where the corresponding pattern lacks feature $j$, and equal to the peak's intensity otherwise.
+Each contiguous set of peaks linked in this way is denoted as a feature, and the ensemble of features defines a new representation of the dataset $ Y_{i_1,i_2...i_N, j} $, where $j$ indexes the peak features. The entries of $Y$ are 0 where the corresponding pattern lacks feature $j$, and equal to the intensity of the feature-peak combination otherwise.
 
 \emph{here, explain two ways of getting peak locations and intensity: the simple ridge-finding and BBA-based peak-fitting.}
+Peak parameters are obtained using a curve-fitting procedure that relies on Scargle's Bayesian Block algorithm to segment each measurement and then performs iterative peak-fitting on every block through a nonlinear least squares optimization on a sum of peak profiles. A Voigt profile is used in this work as it is appropriate for powder diffraction data. 
+
+Peak profiles are added to the fit curve until the fit residual satisfies
+
+$
+|R \oslash \eta| < s,
+$
+
+where s is a chosen threshold of order unity and $\oslash$ denotes elementwise division.
+
+\emph{maybe talk about regularization here}
 
 \emph{cover the utility of noise estimates and background subtraction for better peak fitting}
 
