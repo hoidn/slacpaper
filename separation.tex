@@ -118,33 +118,52 @@ The connectedness of $X$ with respect to indices $i_1, i_2, ... i_N$ describes b
 background, while other contributions to the measured X-ray
 intensity--such as shot noise, one-off artifacts, and stochastic
 variations across different portions of the sample--are independent or
-at least substantially stochastic. We label the signal and stochastic components of $X$ as $S$ and $\eta$, respectively: $X = S + \eta$.
+at least substantially stochastic. We label the signal and stochastic components of $X$ as $S$ and $\eta$, respectively: $X = S + \eta$. 
 
-\emph{perhaps notation shouldn't already be introduced in the intro section}
+\emph{elaborate that, if the dataset is underssampled. $\eta$ is not entirely a result of statistical uncertainty; i.e. it also includes epistemic uncertainty}
+
+In the particular setting of powder diffraction analysis one can additionally exploit other prior information about the data: for example, the signal is concentrated in peaks that are narrow in $q$-space, which allows further separation of $S$ into crystalline and diffuse diffraction components.
+
+
+In this work we present an approach for separating connected
+measurements into their components $S$ and $\eta$. We then apply this
+separation method to two germane x-ray diffraction analyses: (1) robust
+identification of powder diffraction peaks and (2) a feature extraction
+method for combinatorial materials discovery datasets that addresses the
+problem of peak-shifting, a long-standing impediment to the automated
+reconstruction of phase diagrams in the field of high-throughput
+materials discovery. To demonstrate the method's robustness and generalization we
+consider cases in which the space of measurement conditions are one- and
+two-dimensional: respectively, a temperature study of xxxx material and
+a combinatorial study of the CoNiTi ternary system.
+
+These results suggest that handling connected datasets in the proposed fashion
+brings two significant benefits: (1) we get simple signal-to-uncertainty
+heuristics that allow more principled modeling and interpretation of
+measurements, and (2) prior physical information becomes captured in
+geometry, since Euclidean distance between sites in the data tensor $X$
+has a direct relation to distance in measurement condition-space.
+
+\emph{there's probably a better way of saying this. and probably fits better in the abstract or conclusion.}
+\emph{maybe elaborate on item (1), mentioning its its importance to (2) and any other downstream analysis where one would want to use signal-to-noise heuristics.}
 %(note: high-frequency variation is a
 %more accurate description here, uncorrelated is a limiting case but it
 %simplifies the interpretation).
 
-In this paper, we take two examples of XRD datasets--one temperature
-study of xxxx material and one combinatorial study of the CoNiTi
-ternary system--to demonstrate the separation of connected data into
-a physically relevant component and a component that comprises
-noise and artifacts. We represent this as sepration of the signal into two components: $X = \hat{X} + \eta$, where
-$\hat{X}$ is slow-varying in the ordinal dimensions and $\eta$ is a fast-varying noise
-contribution (again, in the ordinal dimensions). The approach depends only on the minimal assumption of
-connectedness and so should be applicable, with minor tuning, to any
-dataset.
+%In particular, we consider two XRD datasets--a %--to demonstrate the separation of connected data into
+%a physically relevant component and a component that comprises
+%noise and artifacts. 
+%We represent this as sepration of the signal into two components: $X = \hat{X} + \eta$, where
+%$\hat{X}$ is slow-varying in the ordinal dimensions and $\eta$ is a fast-varying noise
+%contribution (again, in the ordinal dimensions). The approach depends only on the minimal assumption of
+%connectedness and so should be applicable, with minor tuning, to any
+%dataset.
 
-In the particular case of an XRD dataset the signal is concentrated in peaks that are narrow in $q$-space, which we show allows a robust separation of any background with slow $q$-variation (e.g. diffuse scattering). 
 
-Finally, the most compelling exploitation of connected data emerges
-in its \emph{interpretation}--especially in the propagation of noise
-estimates into uncertainties in any downstream model-derived quantities,
-and in the use of connectivity to remove domain-specific measurement
-artifacts. In section xxxx we show a feature extraction scheme for XRD
-phase mapping datasets that is based on local connectivity. The approach
-is robust to peak-shifting, which until now has been long-standing
-frustration for the interpretation of such datasets.
+% In section xxxx we show a feature extraction scheme for XRD
+%phase mapping datasets that is based on local connectivity. The approach
+%is robust to peak-shifting, which until now has been long-standing
+%frustration for the interpretation of such datasets.
 \emph{say why this is new and good, motivate and compare to prior efforts in the community}
 
 
@@ -274,7 +293,6 @@ link each peak in a pattern to any q-adjacent peaks in neighboring patterns (i.e
 
 Each contiguous set of peaks linked in this way is denoted as a feature, and the ensemble of features defines a new representation of the dataset $ Y_{i_1,i_2...i_N, j} $, where $j$ indexes the peak features. The entries of $Y$ are 0 where the corresponding pattern lacks feature $j$, and equal to the intensity of the feature-peak combination otherwise.
 
-\emph{here, explain two ways of getting peak locations and intensity: the simple ridge-finding and BBA-based peak-fitting.}
 Peak parameters are obtained using a curve-fitting procedure that relies on Scargle's Bayesian Block algorithm to segment each measurement and then performs iterative peak-fitting on every block through a nonlinear least squares optimization on a sum of peak profiles. A Voigt profile is used in this work as it is appropriate for powder diffraction data. 
 
 Peak profiles are added to the fit curve until the fit residual satisfies
@@ -283,11 +301,13 @@ $
 |R \oslash \eta| < s,
 $
 
-where s is a chosen threshold of order unity and $\oslash$ denotes elementwise division.
+where $s$ is a chosen threshold of order unity and $\oslash$ denotes elementwise division.
 
 \emph{maybe talk about regularization here}
 
 \emph{cover the utility of noise estimates and background subtraction for better peak fitting}
+
+The separation of 
 
 \begin{figure}
   \includegraphics[width=\linewidth]{paper_figures/pkg/3_BBA.png}

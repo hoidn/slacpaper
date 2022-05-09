@@ -14,7 +14,8 @@ index $q$ index temperature and momentum transfer, respectively.
 
 % Fig. 4: feature map and peak shift-corrected features
 
-% Fig. 5: comparison of similarity squares
+% Fig. 5: comparison of similarity squares for raw XRD, background
+% subtracted XRD, and peak shift-corrected XRD
 
 % Fig. 6: 3d raw data, 2d (cross section) feature map, and 3d feature
 % 'plates' for Suchi's dataset

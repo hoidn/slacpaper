@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.11.29)  26 APR 2022 14:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.11.29)  9 MAY 2022 15:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -145,69 +145,72 @@ dent or at least
 File: paper_figures/1/raw_with_similarity.png Graphic file (type png)
 <use paper_figures/1/raw_with_similarity.png>
 Package pdftex.def Info: paper_figures/1/raw_with_similarity.png  used on input
- line 181.
+ line 200.
 (pdftex.def)             Requested size: 446.39996pt x 226.55722pt.
 <paper_figures/pkg/2_T_summary.png, id=16, 744.7825pt x 1264.725pt>
 File: paper_figures/pkg/2_T_summary.png Graphic file (type png)
 <use paper_figures/pkg/2_T_summary.png>
 Package pdftex.def Info: paper_figures/pkg/2_T_summary.png  used on input line 
-188.
+207.
 (pdftex.def)             Requested size: 372.39034pt x 632.36096pt.
 
 
-LaTeX Warning: Float too large for page by 11.3054pt on input line 193.
+LaTeX Warning: Float too large for page by 11.3054pt on input line 212.
 
-[2 <./paper_figures/1/raw_with_similarity.png>] [3 <./paper_figures/pkg/2_T_sum
-mary.png>]
-<figures/noise.png, id=29, 906.38625pt x 260.975pt>
+[2]
+<figures/noise.png, id=23, 906.38625pt x 260.975pt>
 File: figures/noise.png Graphic file (type png)
 <use figures/noise.png>
-Package pdftex.def Info: figures/noise.png  used on input line 233.
+Package pdftex.def Info: figures/noise.png  used on input line 252.
 (pdftex.def)             Requested size: 446.39996pt x 128.53194pt.
- [4 <./figures/noise.png>]
-<paper_figures/pkg/3_BBA.png, id=37, 1175.39125pt x 985.6825pt>
+ [3 <./paper_figures/1/raw_with_similarity.png>] [4 <./paper_figures/pkg/2_T_su
+mmary.png>] [5 <./figures/noise.png>]
+<paper_figures/pkg/3_BBA.png, id=40, 1175.39125pt x 985.6825pt>
 File: paper_figures/pkg/3_BBA.png Graphic file (type png)
 <use paper_figures/pkg/3_BBA.png>
-Package pdftex.def Info: paper_figures/pkg/3_BBA.png  used on input line 293.
+Package pdftex.def Info: paper_figures/pkg/3_BBA.png  used on input line 313.
 (pdftex.def)             Requested size: 446.39996pt x 374.35268pt.
-<paper_figures/pkg/4_Tfeatures.png, id=38, 886.31125pt x 298.11375pt>
+<paper_figures/pkg/4_Tfeatures.png, id=41, 886.31125pt x 298.11375pt>
 File: paper_figures/pkg/4_Tfeatures.png Graphic file (type png)
 <use paper_figures/pkg/4_Tfeatures.png>
 Package pdftex.def Info: paper_figures/pkg/4_Tfeatures.png  used on input line 
-304.
+324.
 (pdftex.def)             Requested size: 446.39996pt x 150.15277pt.
-<paper_figures/pkg/5_T_peakfit.png, id=39, 1178.4025pt x 601.24625pt>
+<paper_figures/pkg/5_T_peakfit.png, id=42, 1178.4025pt x 601.24625pt>
 File: paper_figures/pkg/5_T_peakfit.png Graphic file (type png)
 <use paper_figures/pkg/5_T_peakfit.png>
 Package pdftex.def Info: paper_figures/pkg/5_T_peakfit.png  used on input line 
-314.
+334.
 (pdftex.def)             Requested size: 446.39996pt x 227.76035pt.
-<paper_figures/pkg/6.png, id=40, 738.76pt x 434.62375pt>
+<paper_figures/pkg/6.png, id=43, 738.76pt x 434.62375pt>
 File: paper_figures/pkg/6.png Graphic file (type png)
 <use paper_figures/pkg/6.png>
-Package pdftex.def Info: paper_figures/pkg/6.png  used on input line 326.
+Package pdftex.def Info: paper_figures/pkg/6.png  used on input line 346.
 (pdftex.def)             Requested size: 446.39996pt x 262.62653pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<paper_figures/pkg/7_composition_summary_peakfit.png, id=41, 744.7825pt x 1275.
+<paper_figures/pkg/7_composition_summary_peakfit.png, id=44, 744.7825pt x 1275.
 76625pt>
 File: paper_figures/pkg/7_composition_summary_peakfit.png Graphic file (type pn
 g)
 <use paper_figures/pkg/7_composition_summary_peakfit.png>
 Package pdftex.def Info: paper_figures/pkg/7_composition_summary_peakfit.png  u
-sed on input line 336.
+sed on input line 356.
 (pdftex.def)             Requested size: 409.63164pt x 701.67361pt.
 
-LaTeX Warning: Float too large for page by 54.61806pt on input line 344.
+LaTeX Warning: Float too large for page by 54.61806pt on input line 364.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[5] [6 <./paper_figures/pkg/3_BBA.png> <./paper_figures/pkg/4_Tfeatures.png>]
-[7 <./paper_figures/pkg/5_T_peakfit.png> <./paper_figures/pkg/6.png>] [8 <./pap
-er_figures/pkg/7_composition_summary_peakfit.png>] (./separation.aux)
+[6 <./paper_figures/pkg/3_BBA.png>] [7 <./paper_figures/pkg/4_Tfeatures.png> <.
+/paper_figures/pkg/5_T_peakfit.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [8 <./paper_figures/pkg/6.png>] [9 <./paper_figures/pkg/7_composition_summary_
+peakfit.png>] (./separation.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -215,7 +218,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  2143 strings out of 478994
  27545 string characters out of 5858183
- 320365 words of memory out of 5000000
+ 319365 words of memory out of 5000000
  19622 multiletter control sequences out of 15000+600000
  411342 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -235,10 +238,10 @@ e/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive
 /2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2
 021/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/20
 21/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on separation.pdf (8 pages, 1223717 bytes).
+Output written on separation.pdf (9 pages, 1224806 bytes).
 PDF statistics:
- 108 PDF objects out of 1000 (max. 8388607)
- 66 compressed objects within 1 object stream
+ 111 PDF objects out of 1000 (max. 8388607)
+ 68 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  41 words of extra memory for PDF output out of 10000 (max. 10000000)
 
