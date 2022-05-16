@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.11.29)  9 MAY 2022 15:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.11.29)  16 MAY 2022 10:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -77,10 +77,10 @@ File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
 )
 (./separation.aux
 
-LaTeX Warning: Label `fig:noise' multiply defined.
-
-
 LaTeX Warning: Label `fig:features' multiply defined.
+
+
+LaTeX Warning: Label `fig:7' multiply defined.
 
 )
 \openout1 = `separation.aux'.
@@ -121,108 +121,121 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Trying to load font information for U+msa on input line 101
+LaTeX Font Info:    Trying to load font information for U+msa on input line 104
 .
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 101
+LaTeX Font Info:    Trying to load font information for U+msb on input line 104
 .
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-Underfull \hbox (badness 1874) in paragraph at lines 117--122
-\OT1/cmr/m/n/12 variations across different portions of the sample--are indepen
-dent or at least
- []
-
-[1
+) [1
 
 {/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 <paper_figures/1/raw_with_similarity.png, id=14, 1067.99pt x 542.025pt>
 File: paper_figures/1/raw_with_similarity.png Graphic file (type png)
 <use paper_figures/1/raw_with_similarity.png>
 Package pdftex.def Info: paper_figures/1/raw_with_similarity.png  used on input
- line 200.
+ line 204.
 (pdftex.def)             Requested size: 446.39996pt x 226.55722pt.
 <paper_figures/pkg/2_T_summary.png, id=16, 744.7825pt x 1264.725pt>
 File: paper_figures/pkg/2_T_summary.png Graphic file (type png)
 <use paper_figures/pkg/2_T_summary.png>
 Package pdftex.def Info: paper_figures/pkg/2_T_summary.png  used on input line 
-207.
+211.
 (pdftex.def)             Requested size: 372.39034pt x 632.36096pt.
 
 
-LaTeX Warning: Float too large for page by 11.3054pt on input line 212.
+LaTeX Warning: Float too large for page by 11.3054pt on input line 216.
 
-[2]
-<figures/noise.png, id=23, 906.38625pt x 260.975pt>
-File: figures/noise.png Graphic file (type png)
-<use figures/noise.png>
-Package pdftex.def Info: figures/noise.png  used on input line 252.
-(pdftex.def)             Requested size: 446.39996pt x 128.53194pt.
- [3 <./paper_figures/1/raw_with_similarity.png>] [4 <./paper_figures/pkg/2_T_su
-mmary.png>] [5 <./figures/noise.png>]
-<paper_figures/pkg/3_BBA.png, id=40, 1175.39125pt x 985.6825pt>
+[2] [3 <./paper_figures/1/raw_with_similarity.png>] [4 <./paper_figures/pkg/2_T
+_summary.png>] [5]
+<paper_figures/pkg/3_BBA.png, id=38, 574.145pt x 974.64125pt>
 File: paper_figures/pkg/3_BBA.png Graphic file (type png)
 <use paper_figures/pkg/3_BBA.png>
-Package pdftex.def Info: paper_figures/pkg/3_BBA.png  used on input line 313.
-(pdftex.def)             Requested size: 446.39996pt x 374.35268pt.
-<paper_figures/pkg/4_Tfeatures.png, id=41, 886.31125pt x 298.11375pt>
+Package pdftex.def Info: paper_figures/pkg/3_BBA.png  used on input line 316.
+(pdftex.def)             Requested size: 287.0718pt x 487.31943pt.
+<paper_figures/pkg/4_Tfeatures.png, id=39, 886.31125pt x 298.11375pt>
 File: paper_figures/pkg/4_Tfeatures.png Graphic file (type png)
 <use paper_figures/pkg/4_Tfeatures.png>
 Package pdftex.def Info: paper_figures/pkg/4_Tfeatures.png  used on input line 
-324.
+328.
 (pdftex.def)             Requested size: 446.39996pt x 150.15277pt.
-<paper_figures/pkg/5_T_peakfit.png, id=42, 1178.4025pt x 601.24625pt>
+<paper_figures/pkg/5_T_peakfit.png, id=40, 1178.4025pt x 601.24625pt>
 File: paper_figures/pkg/5_T_peakfit.png Graphic file (type png)
 <use paper_figures/pkg/5_T_peakfit.png>
 Package pdftex.def Info: paper_figures/pkg/5_T_peakfit.png  used on input line 
-334.
+338.
 (pdftex.def)             Requested size: 446.39996pt x 227.76035pt.
-<paper_figures/pkg/6.png, id=43, 738.76pt x 434.62375pt>
-File: paper_figures/pkg/6.png Graphic file (type png)
-<use paper_figures/pkg/6.png>
-Package pdftex.def Info: paper_figures/pkg/6.png  used on input line 346.
-(pdftex.def)             Requested size: 446.39996pt x 262.62653pt.
+<paper_figures/pkg/8_Tclustering.png, id=41, 912.40875pt x 898.35625pt>
+File: paper_figures/pkg/8_Tclustering.png Graphic file (type png)
+<use paper_figures/pkg/8_Tclustering.png>
+Package pdftex.def Info: paper_figures/pkg/8_Tclustering.png  used on input lin
+e 348.
+(pdftex.def)             Requested size: 501.82637pt x 494.09746pt.
+
+Overfull \hbox (55.4264pt too wide) in paragraph at lines 348--362
+ [][] 
+ []
+
+
+Underfull \hbox (badness 3179) in paragraph at lines 362--362
+[]\OT1/cmr/m/n/10 (b) Ensemble probability of the most probable cluster configu
+ration for
+ []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<paper_figures/pkg/7_composition_summary_peakfit.png, id=44, 744.7825pt x 1275.
+<paper_figures/pkg/6.png, id=42, 738.76pt x 434.62375pt>
+File: paper_figures/pkg/6.png Graphic file (type png)
+<use paper_figures/pkg/6.png>
+Package pdftex.def Info: paper_figures/pkg/6.png  used on input line 373.
+(pdftex.def)             Requested size: 446.39996pt x 262.62653pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<paper_figures/pkg/7_composition_summary_peakfit.png, id=43, 744.7825pt x 1275.
 76625pt>
 File: paper_figures/pkg/7_composition_summary_peakfit.png Graphic file (type pn
 g)
 <use paper_figures/pkg/7_composition_summary_peakfit.png>
 Package pdftex.def Info: paper_figures/pkg/7_composition_summary_peakfit.png  u
-sed on input line 356.
-(pdftex.def)             Requested size: 409.63164pt x 701.67361pt.
+sed on input line 384.
+(pdftex.def)             Requested size: 372.39034pt x 637.88158pt.
 
-LaTeX Warning: Float too large for page by 54.61806pt on input line 364.
+LaTeX Warning: Float too large for page by 3.82602pt on input line 392.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[6 <./paper_figures/pkg/3_BBA.png>] [7 <./paper_figures/pkg/4_Tfeatures.png> <.
-/paper_figures/pkg/5_T_peakfit.png>]
+[6]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [8 <./paper_figures/pkg/6.png>] [9 <./paper_figures/pkg/7_composition_summary_
-peakfit.png>] (./separation.aux)
+ [7 <./paper_figures/pkg/3_BBA.png>] [8 <./paper_figures/pkg/4_Tfeatures.png> <
+./paper_figures/pkg/5_T_peakfit.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [9 <./paper_figures/pkg/8_Tclustering.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [10 <./paper_figures/pkg/6.png>] [11 <./paper_figures/pkg/7_composition_summar
+y_peakfit.png>] (./separation.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 2143 strings out of 478994
- 27545 string characters out of 5858183
- 319365 words of memory out of 5000000
- 19622 multiletter control sequences out of 15000+600000
- 411342 words of font info for 58 fonts, out of 8000000 for 9000
+ 2144 strings out of 478994
+ 27656 string characters out of 5858183
+ 319369 words of memory out of 5000000
+ 19623 multiletter control sequences out of 15000+600000
+ 411688 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,6n,74p,959b,381s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 68i,6n,74p,1185b,387s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
@@ -236,12 +249,13 @@ texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/tex
 live/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texliv
 e/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive
 /2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2
-021/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/20
-21/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on separation.pdf (9 pages, 1224806 bytes).
+021/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/20
+21/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/202
+1/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on separation.pdf (11 pages, 1171090 bytes).
 PDF statistics:
- 111 PDF objects out of 1000 (max. 8388607)
- 68 compressed objects within 1 object stream
+ 121 PDF objects out of 1000 (max. 8388607)
+ 75 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  41 words of extra memory for PDF output out of 10000 (max. 10000000)
 

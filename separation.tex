@@ -94,16 +94,19 @@
 
 
 \section{Introduction}
-Experiments undertaken at synchrotron and XFEL light sources can generate large volumes of data that are rich in information but plagued by noise and artifacts. There is often an intrinsic connectedness between successive measurements taken on a progression of different physical states: for example, a series of thermodynamic states in a phase diagram. There may also be further data redundancy, as many methods--such as powder diffraction and serial crystallography--require repeated measurements of the same system to accumulate sufficient statistics or orientational averaging. Consequently, large spectroscopic or diffraction datasets generated at third- or fourth-generation light sources are likely to contain sequences of measurements that combine smooth variation with respect to underlying physical parameters with stochastic variation due to counting statistics, detector characteristics, sample nonuniformity and other artefacts. 
+It is generally important in science for experimental measurements to be accompanied by uncertainties, yet it is quite common for those uncertainties--both aleatoric and epistemic--to be partially or entirely unavailable. This may be from a combination of factors: e.g. poorly characterized backgrounds, lack of sufficient models for detector characteristics, and stochastic variations in properties of the observed system itself that are unrelated to the physics of interest yet confound the analysis. At the same time, there may be significant reduncancy across measurements with respect to the underlying signal.
+
+Diffraction and spectroscopy experiments undertaken at synchrotron and XFEL light sources are an example of such a setting: they generate large volumes of data that are rich in information but plagued by contributions such as shot noise, beam energy and intensity jitter, sample nonuniformity and detector artifacts. However there is often an intrinsic connectedness between successive measurements taken on a progression of different physical states: for example, values of the state variables in a thermodynamic study. There may also be further data redundancy, as many methods--such as powder diffraction and serial crystallography--require repeated measurements of the same system to accumulate sufficient statistics or orientational averaging. Consequently, large spectroscopic or diffraction datasets generated at third- or fourth-generation light sources are likely to contain sequences of measurements that combine smooth variation with respect to underlying physical parameters with a uncertainty whose underlying distribution is \emph{a prior} unknown but that is discontinuous and substantially uncorrelated from one measurement to the next. 
  %Define ordered and connected
-These underlying physical parameters can be treated as ordinal variables to assemble a spectroscopic or (1D) diffraction dataset into a tensor of the form 
+
+Taking a series of 1d measurements, the relevant underlying physical parameters can be treated as ordinal variables to the dataset into a tensor of the form 
 
 \begin{equation}
 X_{i_1i_2...i_N, iq}
 \end{equation}
 
-where the first $i1$ to $i_N$ index the ordinal variables and $iq$ indexes energy or momentum transfer in the case of XRD or spectroscopy,
-respectively. 
+where the first $i_1$ to $i_N$ index the ordinal variables and $iq$ indexes the 1d measurement grid ($q$ denotes momentum transfer in 1d x-ray diffraction, which for concreteness we will assume is the experimental modality).
+
 %for which each distinct sequence of values for the indices $i_1, i_2,...
 %i_N$ corresponds to a single spectrum or diffraction pattern, $q$
 %indexes momentum transfer or energy in the case of XRD or spectroscopy,
@@ -115,10 +118,12 @@ respectively.
 %
 
 The connectedness of $X$ with respect to indices $i_1, i_2, ... i_N$ describes both the sample-derived signal and any smoothly-varying
-background, while other contributions to the measured X-ray
-intensity--such as shot noise, one-off artifacts, and stochastic
-variations across different portions of the sample--are independent or
-at least substantially stochastic. We label the signal and stochastic components of $X$ as $S$ and $\eta$, respectively: $X = S + \eta$. 
+background. We label the signal and stochastic components of $X$ as $S$ and $\eta$, respectively: $X = S + \eta$.
+ 
+%#other contributions to the measured X-ray
+%#intensity--such as shot noise, one-off artifacts, and stochastic
+%#variations across different portions of the sample--are independent or
+%#at least substantially stochastic. We label the signal and stochastic components of $X$ as $S$ and $\eta$, respectively: $X = S + \eta$. 
 
 \emph{elaborate that, if the dataset is underssampled. $\eta$ is not entirely a result of statistical uncertainty; i.e. it also includes epistemic uncertainty}
 
@@ -138,14 +143,14 @@ two-dimensional: respectively, a temperature study of xxxx material and
 a combinatorial study of the CoNiTi ternary system.
 
 These results suggest that handling connected datasets in the proposed fashion
-brings two significant benefits: (1) we get simple signal-to-uncertainty
+brings two types of benefits: (1) we get simple signal-to-uncertainty
 heuristics that allow more principled modeling and interpretation of
 measurements, and (2) prior physical information becomes captured in
 geometry, since Euclidean distance between sites in the data tensor $X$
-has a direct relation to distance in measurement condition-space.
+has a direct relation to distance in physical parameter space.
 
 \emph{there's probably a better way of saying this. and probably fits better in the abstract or conclusion.}
-\emph{maybe elaborate on item (1), mentioning its its importance to (2) and any other downstream analysis where one would want to use signal-to-noise heuristics.}
+\emph{maybe elaborate on item (1), mentioning its importance to (2) and any other downstream analysis where one would want to use signal-to-noise heuristics.}
 %(note: high-frequency variation is a
 %more accurate description here, uncorrelated is a limiting case but it
 %simplifies the interpretation).
@@ -165,7 +170,6 @@ has a direct relation to distance in measurement condition-space.
 %is robust to peak-shifting, which until now has been long-standing
 %frustration for the interpretation of such datasets.
 \emph{say why this is new and good, motivate and compare to prior efforts in the community}
-
 
 %use  connectedness of measurements to separate a collection of spectral or diffraction
 %
@@ -198,7 +202,7 @@ Summarize approaches using simple similarity measures, such as cosine distance i
 
 \begin{figure}
   \includegraphics[width=\linewidth]{paper_figures/1/raw_with_similarity.png}
-  \caption{}
+  \caption{(a) Heatmap of 60 experimental diffraction patterns of the XXX system at diffferent temperatures, ordered vertically in decreasing temperature. (b) Heatmap of cosine similarity between pairs of those diffraction patterns (a)}
   \label{fig:noise}
 \end{figure}
 
@@ -224,8 +228,10 @@ Fourier transform. This is because of the presence of ringing artifacts
 as well as the high concentration of signal in the diffraction peaks,
 which pile on top of the background in the low-frequency region of the
 power spectral density. On the other hand we can identify peak regions
-by padding the signal in the $q$ dimension, taking a 1D DFT, and
-suppressing low-frequency components with a simple filter:
+with the following transformation:
+
+%by padding the signal in the $q$ dimension, taking a 1D DFT, and
+%suppressing low-frequency components with a simple filter:
 
 % TODO effect of zero-padding / extrapolation
 \begin{equation}
@@ -234,25 +240,25 @@ N(0, \sigma) \circledast |{F}^{-1}(H  {F}(q))|,
 
 where $N$ is a unit Gaussian in q with standard deviation $\sigma$
 is chosen to match the diffraction peak width, $\circledast$ denotes
-convolution, and $H$ is a Blackman window 
+convolution, $F$ denotes Fourier transformation and $H$ is a Blackman window.
 
 \emph{this part will be fleshed out. some steps are still omitted}
 
-The background is then estimated by an interpolation using data from non-peak regions to
-fill in background intensities within the peak regions (Fig. 1(c)).
-Finally, it is subtracted from the denoised data (Fig. 1(d)).
+The background is then estimated by smoothed nearest-neighbor interpolation in multiple dimensions, wherein data from non-peak regions is used to
+fill in background intensities within the peak regions (Fig. 1(c)). An adjustable threshold parameter $t$ specifies the fraction of pixels belonging to peak regions; favorable values of $t$ depend mainly on the noise level and density of diffraction peaks in a particular dataset, and are determined manually. 
+Finally, the background estimate is subtracted from the denoised data (Fig. 1(d)).
 
 To make for a simple extension to datasets of arbitrary dimensions we
 estimate the background by linear interpolation in the q dimension
-alone, together with an N-dimensional nearest-neighbor assignment to
+alone, together with a N-dimensional nearest-neighbor assignment to
 fill in points out of range for interpolation.
 
 \subsection{Noise estimation}
-\begin{figure}
-  \includegraphics[width=\linewidth]{figures/noise.png}
-  \caption{}
-  \label{fig:noise}
-\end{figure}
+%\begin{figure}
+%  \includegraphics[width=\linewidth]{figures/noise.png}
+%  \caption{}
+%  \label{fig:noise}
+%\end{figure}
 While in the case of intensity variation in the q dimension we assume
 that high-frequency features belong to the informative (i.e. physical)
 component of the signal, in the case of the ordering dimensions we
@@ -274,8 +280,6 @@ that are interpreted as single samples of an unknown underlying noise distributi
 We label the signal and background $\hat{S}$ and $B$, respectively,
 so that $X = \hat{S} + B + \eta$.
 
-
-
 \emph{some discussion is needed on the difference in interpretation of the noise estimate in undersampled vs. sufficiently sampled datasets}
 
 \section{Methods and Discussion}
@@ -293,27 +297,27 @@ link each peak in a pattern to any q-adjacent peaks in neighboring patterns (i.e
 
 Each contiguous set of peaks linked in this way is denoted as a feature, and the ensemble of features defines a new representation of the dataset $ Y_{i_1,i_2...i_N, j} $, where $j$ indexes the peak features. The entries of $Y$ are 0 where the corresponding pattern lacks feature $j$, and equal to the intensity of the feature-peak combination otherwise.
 
-Peak parameters are obtained using a curve-fitting procedure that relies on Scargle's Bayesian Block algorithm to segment each measurement and then performs iterative peak-fitting on every block through a nonlinear least squares optimization on a sum of peak profiles. A Voigt profile is used in this work as it is appropriate for powder diffraction data. 
+Peak parameters are obtained using a curve-fitting procedure that relies on Scargle's Bayesian Block algorithm to segment each 1d measurement into signal regions (i.e. blocks) and then performs iterative peak-fitting on every block through a nonlinear least squares optimization on a sum of peak profiles. A Voigt profile is used in this work as it is appropriate for powder diffraction data. 
 
-Peak profiles are added to the fit curve until the fit residual satisfies
+For an individual block comprised by a set $B$ of momentum transfers, peak profiles are added to the fit curve until the fit residual $R$ satisfies
 
-$
-|R \oslash \eta| < s,
-$
+\begin{equation}
+(\Sigma_{q \in B}\frac{1}{N}\frac{R_q^2}{\eta_{q}^2}))^{1 / 2}  < s,
+%|R \oslash \eta|
+\end{equation}
 
-where $s$ is a chosen threshold of order unity and $\oslash$ denotes elementwise division.
-
-\emph{maybe talk about regularization here}
+where $s$ is a threshold parameter of order unity.% and $\oslash$ denotes elementwise division.
 
 \emph{cover the utility of noise estimates and background subtraction for better peak fitting}
 
-The separation of 
 
 \begin{figure}
-  \includegraphics[width=\linewidth]{paper_figures/pkg/3_BBA.png}
-  \caption{Example of the effect of background subtraction and noise
- estimation on peak fitting for one BBA block. This figure needs to be
- reformatted (font size, layout)}
+  \centering
+  \includegraphics[scale=0.5]{paper_figures/pkg/3_BBA.png}
+  \caption{(a) Powder diffraction pattern of the xxx system showing background subtraction and a single Bayesian block in red. (b) Iterative peak fitting of the single block using estimated noise relative to curve fit residual to determine the number of peak profiles to include. 
+
+\emph{This figure needs to be
+ reformatted (font size, layout). I will add a third panel showing the effect of background subtraction on the number of peak profiles found.}}
   \label{fig:features}
 \end{figure}
 
@@ -332,8 +336,31 @@ of XRD patterns for xxxxxx system. Index $i$ denotes temperature.
 
 \begin{figure}
   \includegraphics[width=\linewidth]{paper_figures/pkg/5_T_peakfit.png}
-\caption{}
+\caption{Comparison of cosine similarity squares for (a) raw powder diffraction of the xxx system, (b) post background
+ subtraction, and (c) peak shift-corrected feature vectors derived from the same dataset.
+}
   \label{fig:simsquares}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+%  \begin{subfigure}[b]{0.4\linewidth}
+    \includegraphics[scale = .55]{paper_figures/pkg/8_Tclustering.png}
+%    \caption{(a)}
+%  \end{subfigure}
+%  \begin{subfigure}[b]{0.4\linewidth}
+%    \caption{(b)}
+%  \end{subfigure}
+  \caption{(a) Optimal clustering for a set of XRD patterns demonstrating a
+temperature progression in xxxx system. The optimal number of clusters
+is determined by clustering stability over an ensemble of XRD patterns
+generated by draws from a according to the simple noise model described in section xxxx.
+
+(b) Ensemble probability of the most probable cluster configuration
+for agglomerative clustering with Ward linkage criterion, for the same
+dataset. Horizontal axis varies the number of clusters.
+}
+  \label{fig:7}
 \end{figure}
 
 \begin{figure}[h!]
@@ -346,20 +373,21 @@ of XRD patterns for xxxxxx system. Index $i$ denotes temperature.
     \includegraphics[width=\linewidth]{paper_figures/pkg/6.png}
 %    \caption{(b)}
 %  \end{subfigure}
-  \caption{caption}
+  \caption{(a) volumetric heatmap for a three-dimensional diffraction study of the CoNiTi ternary system. Dimensions x any y are coordinates on the compositional simplex, while dimension z indexes momentum transfer. (b) Three-dimensional rendering of peak features identified by the shift-correcting procedure described in section xx. (c) Two-dimensional cut of the dataset displayed in (a), with peak features overlayed in black.}
   \label{fig:6}
 \end{figure}
 
+\section{Supplemental figures}
 \begin{figure}[h!]
   \centering
 %  \begin{subfigure}[b]{0.4\linewidth}
-    \includegraphics[scale = .55]{paper_figures/pkg/7_composition_summary_peakfit.png}
+    \includegraphics[scale = .5]{paper_figures/pkg/7_composition_summary_peakfit.png}
 %    \caption{(a)}
 %  \end{subfigure}
 %  \begin{subfigure}[b]{0.4\linewidth}
 %    \caption{(b)}
 %  \end{subfigure}
-  \caption{caption}
+  \caption{Separation and feature extraction for a 2d slice of the CoNiTi ternary system.}
   \label{fig:7}
 \end{figure}
 
@@ -367,6 +395,9 @@ of XRD patterns for xxxxxx system. Index $i$ denotes temperature.
 %* Further interpretation: this is a dimensionality reduction technique. Not a scientific methodology in itself (i.e. the extracted information still has to be interpreted), but a possible improvment over prior methods that are very fragile with respect to peak shifts. 
 
 \section{Conclusions and future work}
+
+In this section, we propose using this type of approach for event detection in a high-data rate environment. We can also talk about the prospect that our peak shift-correction will help solve the phase-mapping problem.
+
 
 \section{References}
 
