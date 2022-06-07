@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.11.29)  2 JUN 2022 10:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.11.29)  7 JUN 2022 15:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -75,7 +75,14 @@ File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count188
 \l__pdf_internal_box=\box47
 )
-(./separation.aux)
+(./separation.aux
+
+LaTeX Warning: Label `fig:features' multiply defined.
+
+
+LaTeX Warning: Label `fig:7' multiply defined.
+
+)
 \openout1 = `separation.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 50.
@@ -92,8 +99,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 50.
 LaTeX Font Info:    ... okay on input line 50.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 50.
 LaTeX Font Info:    ... okay on input line 50.
-
-(/usr/local/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+ (/usr/local/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count189
 \scratchdimen=\dimen143
@@ -164,14 +170,14 @@ File: paper_figures/pkg/5_T_peakfit.png Graphic file (type png)
 Package pdftex.def Info: paper_figures/pkg/5_T_peakfit.png  used on input line 
 338.
 (pdftex.def)             Requested size: 446.39996pt x 227.76035pt.
-<paper_figures/pkg/8_Tclustering.png, id=41, 1192.455pt x 1064.97874pt>
+<paper_figures/pkg/8_Tclustering.png, id=41, 1203.49625pt x 1064.97874pt>
 File: paper_figures/pkg/8_Tclustering.png Graphic file (type png)
 <use paper_figures/pkg/8_Tclustering.png>
 Package pdftex.def Info: paper_figures/pkg/8_Tclustering.png  used on input lin
 e 348.
-(pdftex.def)             Requested size: 655.8523pt x 585.74013pt.
+(pdftex.def)             Requested size: 661.92499pt x 585.74013pt.
 
-Overfull \hbox (209.45233pt too wide) in paragraph at lines 348--362
+Overfull \hbox (215.52502pt too wide) in paragraph at lines 348--362
  [][] 
  []
 
@@ -220,13 +226,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [10 <./paper_figures/pkg/6.png>] [11 <./paper_figures/pkg/7_composition_summar
 y_peakfit.png>] (./separation.aux)
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
  2144 strings out of 478994
  27656 string characters out of 5858183
- 319287 words of memory out of 5000000
+ 319369 words of memory out of 5000000
  19623 multiletter control sequences out of 15000+600000
  411688 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -247,7 +253,7 @@ e/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive
 021/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/20
 21/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/202
 1/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on separation.pdf (11 pages, 1173594 bytes).
+Output written on separation.pdf (11 pages, 1174923 bytes).
 PDF statistics:
  121 PDF objects out of 1000 (max. 8388607)
  75 compressed objects within 1 object stream
