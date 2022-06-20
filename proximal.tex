@@ -263,7 +263,9 @@ separate them (Fig. 2)
 The above estimations of background and noise components separate
 the signal into estimates of the signal component $S$ (which in turn separates into
 background + diffuse scattering and diffraction) and uncertainty values
-that are interpreted as single samples of an unknown underlying noise distributions. Despite its poorly-characterized nature, the latter of these can be used to propagate uncertainties to any downstream analyses. 
+that are interpreted as single samples of an unknown underlying noise
+distributions. Despite its poorly-characterized nature, the latter of
+these can be used to propagate uncertainties to any downstream analyses.
 
 We label the signal and background $\hat{S}$ and $B$, respectively,
 so that $X = \hat{S} + B + \eta$.
@@ -283,11 +285,22 @@ regions in a combinatorial diffraction dataset. Specifically, we
 identify diffraction peaks in every XRD pattern, independently, and then
 link each peak in a pattern to any q-adjacent peaks in neighboring patterns (i.e. patterns that are adjacent in $i_1, i_2 ... i_N$). 
 
-Each contiguous set of peaks linked in this way is denoted as a feature, and the ensemble of features defines a new representation of the dataset $ Y_{i_1,i_2...i_N, j} $, where $j$ indexes the peak features. The entries of $Y$ are 0 where the corresponding pattern lacks feature $j$, and equal to the intensity of the feature-peak combination otherwise.
+Each contiguous set of peaks linked in this way is denoted as a feature,
+and the ensemble of features defines a new representation of the dataset
+$ Y_{i_1,i_2...i_N, j} $, where $j$ indexes the peak features. The
+entries of $Y$ are 0 where the corresponding pattern lacks feature $j$,
+and equal to the intensity of the feature-peak combination otherwise.
 
-Peak parameters are obtained using a curve-fitting procedure that relies on Scargle's Bayesian Block algorithm to segment each 1d measurement into signal regions (i.e. blocks) and then performs iterative peak-fitting on every block through a nonlinear least squares optimization on a sum of peak profiles. A Voigt profile is used in this work as it is appropriate for powder diffraction data. 
+Peak parameters are obtained using a curve-fitting procedure that
+relies on Scargle's Bayesian Block algorithm to segment each 1d
+measurement into signal regions (i.e. blocks) and then performs
+iterative peak-fitting on every block through a nonlinear least squares
+optimization on a sum of peak profiles. A Voigt profile is used in this
+work as it is appropriate for powder diffraction data.
 
-For an individual block comprised by a set $B$ of momentum transfers, peak profiles are added to the fit curve until the fit residual $R$ satisfies
+For an individual block comprised by a set $B$ of momentum transfers,
+peak profiles are added to the fit curve until the fit residual $R$
+satisfies
 
 \begin{equation}
 (\Sigma_{q \in B}\frac{1}{N}\frac{R_q^2}{\eta_{q}^2}))^{1 / 2}  < s,
@@ -302,10 +315,14 @@ where $s$ is a threshold parameter of order unity.% and $\oslash$ denotes elemen
 \begin{figure}
   \centering
   \includegraphics[scale=0.5]{paper_figures/pkg/3_BBA.png}
-  \caption{(a) Powder diffraction pattern of the xxx system showing background subtraction and a single Bayesian block in red. (b) Iterative peak fitting of the single block using estimated noise relative to curve fit residual to determine the number of peak profiles to include. 
+  \caption{(a) Powder diffraction pattern of the xxx system showing
+background subtraction and a single Bayesian block in red. (b) Iterative
+peak fitting of the single block using estimated noise relative to curve
+fit residual to determine the number of peak profiles to include.
 
-\emph{This figure needs to be
- reformatted (font size, layout). I will add a third panel showing the effect of background subtraction on the number of peak profiles found.}}
+\emph{This figure needs to be reformatted (font size, layout). I will
+add a third panel showing the effect of background subtraction on the
+number of peak profiles found.}}
   \label{fig:features}
 \end{figure}
 
@@ -361,7 +378,13 @@ dataset. Horizontal axis varies the number of clusters.
     \includegraphics[width=\linewidth]{paper_figures/pkg/6.png}
 %    \caption{(b)}
 %  \end{subfigure}
-  \caption{(a) volumetric heatmap for a three-dimensional diffraction study of the CoNiTi ternary system. Dimensions x any y are coordinates on the compositional simplex, while dimension z indexes momentum transfer. (b) Three-dimensional rendering of peak features identified by the shift-correcting procedure described in section xx. (c) Two-dimensional cut of the dataset displayed in (a), with peak features overlayed in black.}
+  \caption{(a) volumetric heatmap for a three-dimensional diffraction
+study of the CoNiTi ternary system. Dimensions x any y are coordinates
+on the compositional simplex, while dimension z indexes momentum
+transfer. (b) Three-dimensional rendering of peak features identified
+by the shift-correcting procedure described in section xx. (c)
+Two-dimensional cut of the dataset displayed in (a), with peak features
+overlayed in black.}
   \label{fig:6}
 \end{figure}
 
@@ -384,7 +407,10 @@ dataset. Horizontal axis varies the number of clusters.
 
 \section{Conclusions and future work}
 
-In this section, we propose using this type of approach for event detection in a high-data rate environment. We can also talk about the prospect that our peak shift-correction will help solve the phase-mapping problem.
+In this section, we propose using this type of approach for event
+detection in a high-data rate environment. We can also talk about
+the prospect that our peak shift-correction will help solve the
+phase-mapping problem.
 
 
 \section{References}
